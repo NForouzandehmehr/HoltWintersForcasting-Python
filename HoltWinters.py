@@ -10,7 +10,8 @@ from pytz import timezone
 def HoltWinters(data, data_rang, prediction_range):
     base=importr('base')
     utils=importr("utils")
-    utils.install_packages("forecast")
+    #utils.install_packages("forecast")
+    utils=importr("forecast")
     c = robjects.r['c']
     res = robjects.IntVector(data)
     ts=  stat.ts(res,start=c(2015,6,27),frequency=7 )
